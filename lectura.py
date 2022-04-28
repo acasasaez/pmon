@@ -45,10 +45,17 @@ Mediana_spd = np.median(df)
 Desviacion_spd = np.std(df)
 Varianza_spd = np.var(df)
 
-nombres =[ "medias", "medianas", "desviaciones", "varianzas"]
-datos = [[Media_Velocidad, Mediana_Velocidad, Desviacion_Velocidad, Varianza_Velocidad],
+
+datos = [
+    [Media_Velocidad, Mediana_Velocidad, Desviacion_Velocidad, Varianza_Velocidad],
 [Media_Ataque, Mediana_Ataque, Desviacion_Ataque, Varianza_Ataque],
 [Media_defensa, Mediana_defensa, Desviacion_defensa, Varianza_defensa], 
 [Media_spa, Mediana_spa, Desviacion_spa, Varianza_spa], 
 [Media_spd, Mediana_spd, Desviacion_spd, Varianza_spd]]
+
+import csv
+with open("resultados.csv.csv", "w",newline = "") as file: 
+    writer =csv.writer(file, delimiter = "," )
+    writer.writerow( ["TABLA DE DATOS RESULTADOS"])
+    writer.writerows(datos)
 
